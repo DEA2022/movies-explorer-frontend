@@ -32,18 +32,18 @@ html {
 }
 
 .page__footer {
-  margin: 115px auto 20px;
+  margin: 0 auto 20px;
 }
 
 @media (max-width: 900px) {
   .page__footer {
-    margin: 90px auto 20px;
+    margin: 0px auto 20px;
   }
 }
 
 @media (max-width: 600px) {
   .page__footer {
-    margin: 70px auto 20px;
+    margin: 0px auto 20px;
   }
 }
 

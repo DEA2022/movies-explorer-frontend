@@ -1,0 +1,151 @@
+.profile {
+  max-width: 410px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.profile__form {
+  padding-top: 123px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.18;
+  width: 100%;
+}
+
+.profile__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.profile__container_type_last {
+  border: 0;
+  padding-top: 17px;
+  padding-bottom: 0px;
+}
+
+.profile__info {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.18;
+}
+
+.profile__input {
+  padding: 0;
+  border: 0;
+  background-color: #202020;
+  color: #FFFFFF;
+  text-align: right;
+  font-weight: 400;
+}
+
+.profile__manage-account {
+  padding-top: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 13px;
+  line-height: 1.23;
+}
+
+.profile__button-edit {
+  background-color: #202020;
+  border: 0;
+  color: #FFFFFF;
+}
+
+.profile__button-edit:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.profile__exit {
+  color: #EE3465;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.profile__exit {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.profile__button-saved {
+  max-width: 410px;
+  width: 100%;
+  min-height: 45px;
+  background-color: #3456F3;
+  color: #FFFFFF;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.21;
+}
+
+.profile__button-saved:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.profile__button-saved_disabled {
+  max-width: 410px;
+  width: 100%;
+  min-height: 45px;
+  background-color: #F8F8F8;
+  color: #C2C2C2;;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.21;
+  cursor: not-allowed;
+}
+
+.profile__success {
+  padding-top: 189px;
+  color: #FF004C;
+  font-size: 11px;
+  line-height: 1.18;
+}
+
+.profile__success_hidden {
+  color: #202020;
+}
+
+@media (max-width: 900px) {
+  .profile__form {
+    padding-top: 96px;
+  }
+
+  .profile__manage-account {
+    padding-top: 210px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile {
+    max-width: 260px;
+  }
+
+  .profile__form {
+    padding-top: 80px;
+  }
+
+  .profile__manage-account {
+    padding-top: 379px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}

@@ -1,0 +1,34 @@
+.movies-cards__button {
+  margin: 62px auto 80px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 320px;
+  width: 100%;
+  min-height: 36px;
+  border-radius: 6px;
+  border: 1px solid #424242;
+  background-color: #202020;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.movies-cards__button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  .movies-cards__button {
+    margin: 60px auto 80px;
+  }
+}
+
+@media (max-width: 740px) {
+  .movies-cards__button {
+    max-width: 240px;
+  }
+}

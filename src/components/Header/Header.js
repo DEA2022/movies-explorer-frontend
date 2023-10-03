@@ -1,16 +1,22 @@
 import './Header.css';
-import Logo from '../Logo/Logo';
+import React from 'react';
+import Navigation from '../Navigation/Navigation';
+import { useLocation } from 'react-router-dom';
+import { paths } from '../../utils/constants'
 
-function Header() {
-  return (
-    <header className='header page__header'>
-      <Logo />
-      <div className='header__nav'>
-        <a className='header__registration' href="#">Регистрация</a>
-        <button className='header__enter'>Войти</button>
-      </div>
-    </header>
-  )
+function Header({ isLoggedIn }) {
+  const location = useLocation();
+
+
+  if (Object.values(paths).some((path) => path.pathname === location.pathname && path.showHeader === true)) {
+    return (
+      <header className='header page__header'>
+        <Navigation isLoggedIn={isLoggedIn} />
+      </header>
+    )
+  }
+
+  return
 }
 
 export default Header;
