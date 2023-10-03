@@ -12,6 +12,7 @@ import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 import { paths } from '../../utils/constants'
 import { initialCards as list } from '../../utils/constants'
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(true);
   const [movies, setMovies] = React.useState(list)

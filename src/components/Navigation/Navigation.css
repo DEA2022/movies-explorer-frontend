@@ -4,6 +4,7 @@
   align-items: center;
   max-width: 1140px;
   width: 100%;
+  position: relative;
 }
 
 .navigation__container {
@@ -96,7 +97,6 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.14;
-  text-decoration: none;
 }
 
 .navigation__account:hover {
@@ -108,6 +108,24 @@
   text-decoration: none;
   color: #FFFFFF;
 }
+
+.navigation__burger-button {
+  background-image: url(../../images/burger.svg);
+  background-color: #202020;
+  width: 44px;
+  height: 44px;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease-in-out;
+  border: 0;
+  padding: 0;
+  display: none;
+}
+
+.navigation__burger-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 
 @media (max-width: 900px) {
   .navigation__container {
@@ -121,6 +139,10 @@
 
   .navigation__account {
     display: none;
+  }
+
+  .navigation__burger-button {
+    display: block;
   }
 }
 
@@ -136,68 +158,9 @@
     padding: 5px 12px;
     min-height: 26px;
   }
-}
 
-
-
-.header__burger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  background-color: #202020;
-  border: 0;
-  padding: 0;
-}
-
-.header__burger:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
-
-@media (max-width: 900px) {
-  .header__burger {
-    display: flex;
-  }
-}
-
-.header__burger-button {
-  background-image: url(../../images/burger.svg);
-  width: 44px;
-  height: 44px;
-  background-repeat: no-repeat;
-  transition: transform 0.3s ease-in-out;
-}
-
-.header__burger-close {
-  visibility: hidden;
-  width: 20px;
-  height: 20px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0);
-  background-position: 50%;
-  border: 0;
-  padding: 0;
-  margin-right: 30px;
-}
-
-.header__burger-close:hover {
-  cursor: pointer;
-  opacity: 0.6;
-}
-
-@media (max-width: 900px) {
-  .header__burger-close {
-    visibility: visible;
-  }
-}
-
-@media (max-width: 900px) {
-  .header_opened {
-    padding: 144px 0 30px;
-    position: absolute;
+  .navigation__burger-button {
+    width: 40px;
+    height: 43px;
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import './Navigation.css';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 function Navigation({ isLoggedIn }) {
 
@@ -12,24 +13,18 @@ function Navigation({ isLoggedIn }) {
     setIsBurgerMenuOpen(!isBurgerMenuOpen)
   }
 
-  function closeMenu() {
-    setIsBurgerMenuOpen(false)
-  }
-
   function renderBurger() {
     return isBurgerMenuOpen
-      ? <div className='header__burger-close' onClick={closeMenu} />
-      : <button className='header__burger' onClick={handleBurgerMenuClick}>
-        <div className='header__burger-button' />
-      </button>
+      ? <BurgerMenu onClose={() => setIsBurgerMenuOpen(false)} />
+      : <button className='navigation__burger-button' onClick={handleBurgerMenuClick} />
   }
 
   return (
-    <nav className={`navigation ${isBurgerMenuOpen && 'header_opened'}`}>
+    <nav className={`navigation`}>
       <Logo />
-      {isLoggedIn && renderBurger ? (
+      {isLoggedIn ? (
         <>
-          <ul className='navigation__container navigation__container_type_auth'>
+          <ul className={`navigation__container ${isBurgerMenuOpen && 'burger-menu_opened'}  navigation__container_type_auth`}>
             <li className='navigation__item'><Link className='navigation__link' to='/movies'>Фильмы</Link></li>
             <li className='navigation__item'><Link className='navigation__link' to='/saved-movies'>Сохраненные фильмы</Link></li>
           </ul>
@@ -45,7 +40,7 @@ function Navigation({ isLoggedIn }) {
           </div>
         </>)
       }
-      {/* {isLoggedIn && renderBurger} */}
+      {isLoggedIn && renderBurger()}
 
     </nav>
   )
