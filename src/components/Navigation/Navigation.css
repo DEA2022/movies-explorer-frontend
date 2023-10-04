@@ -129,6 +129,10 @@
     display: none;
   }
 
+  .navigation__account-link {
+    display: none;
+  }
+
   .navigation__link:active {
     border-bottom: #FFFFFF solid 2px;
     padding-top: 8px;
