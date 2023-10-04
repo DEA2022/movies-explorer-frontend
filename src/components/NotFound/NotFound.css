@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 60px;
   padding-top: 246px;
 }
 
@@ -39,12 +40,14 @@
 @media (max-width: 900px) {
   .not-found {
     padding-top: 408px;
+    padding-bottom: 222px;
   }
 }
 
 @media (max-width: 600px) {
   .not-found {
     padding-top: 329px;
+    padding-bottom: 30px;
   }
 
   .not-found__title {

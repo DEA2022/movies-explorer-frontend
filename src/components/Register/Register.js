@@ -12,7 +12,7 @@ function Register({ heading, textButton }) {
       <Logo />
       <FormHeading heading={heading} />
       <Form>
-        <label className='register__label' id='name'>Имя</label>
+        <label className='register__label'>Имя</label>
         <input
           className='register__field'
           type='text'
@@ -24,7 +24,7 @@ function Register({ heading, textButton }) {
           maxlength="30"
         />
         <span className="register__field-error">Что-то пошло не так...</span>
-        <label className='register__label' id='email'>E-mail</label>
+        <label className='register__label'>E-mail</label>
         <input
           className='register__field'
           type='email'
@@ -34,7 +34,7 @@ function Register({ heading, textButton }) {
           required
         />
         <span className="register__field-error">Что-то пошло не так...</span>
-        <label className='register__label' id='password'>Пароль</label>
+        <label className='register__label'>Пароль</label>
         <input
           className='register__field'
           type='password'

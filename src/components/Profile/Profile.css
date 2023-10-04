@@ -2,10 +2,11 @@
   max-width: 410px;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
   margin: 0 auto;
   flex-direction: column;
+  flex: 1 0 auto;
+  padding-bottom: 269px;
 }
 
 .profile__form {

@@ -29,6 +29,13 @@ html {
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
+  padding-left: calc(20px + (0 - 20) * (100vw - 768px) / (1280 - 768));
+  padding-right: calc(20px + (0 - 20) * (100vw - 768px) / (1280 - 768));
+  box-sizing: border-box;
+}
+
+.page__header {
+  margin: 0 auto 20px;
 }
 
 .page__footer {
@@ -36,6 +43,10 @@ html {
 }
 
 @media (max-width: 900px) {
+  .page {
+    padding-left: calc(14px + (20 - 14) * (100vw - 320px) / (768 - 320));
+    padding-right: calc(14px + (20 - 14) * (100vw - 320px) / (768 - 320));
+  }
   .page__footer {
     margin: 0px auto 20px;
   }
@@ -45,14 +56,12 @@ html {
   .page__footer {
     margin: 0px auto 20px;
   }
-}
 
-.page__header {
-  margin: 0 auto 20px;
-}
-
-@media (max-width: 600px) {
   .page__header {
     margin: 0 auto 14px;
   }
 }
+
+
+  
+

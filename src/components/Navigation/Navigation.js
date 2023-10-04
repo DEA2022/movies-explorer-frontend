@@ -28,9 +28,7 @@ function Navigation({ isLoggedIn }) {
             <li className='navigation__item'><Link className='navigation__link' to='/movies'>Фильмы</Link></li>
             <li className='navigation__item'><Link className='navigation__link' to='/saved-movies'>Сохраненные фильмы</Link></li>
           </ul>
-          <button className='navigation__account' type='button'>
-            <Link className='navigation__account-link' to='/profile'>Аккаунт</Link>
-          </button>
+          <Link className='navigation__account-link' to='/profile'>Аккаунт</Link>
         </>
       ) : (
         <>

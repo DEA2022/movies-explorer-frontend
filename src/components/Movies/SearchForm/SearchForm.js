@@ -3,7 +3,7 @@ import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 
 function SearchForm() {
   return (
-    <section className="search">
+    <section className="search" aria-label="Поиск фильмов">
       <form className="search__form">
         <div className="search__form-container">
           <input

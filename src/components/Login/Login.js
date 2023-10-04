@@ -12,7 +12,7 @@ function Login({ heading, textButton, additionalClass }) {
       <Logo />
       <FormHeading heading={heading} />
       <Form>
-        <label className='login__label' id='email'>E-mail</label>
+        <label className='login__label'>E-mail</label>
         <input
           className='login__field'
           type='email'
@@ -22,7 +22,7 @@ function Login({ heading, textButton, additionalClass }) {
           required
         />
         <span className="login__field-error">Что-то пошло не так...</span>
-        <label className='login__label' id='password'>Пароль</label>
+        <label className='login__label'>Пароль</label>
         <input
           className='login__field'
           type='password'

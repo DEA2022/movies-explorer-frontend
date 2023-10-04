@@ -1,4 +1,4 @@
-.filter__checkbox-container {
+.filter {
   display: flex;
   margin-top: 29px;
   padding-bottom: 40px;
@@ -59,13 +59,13 @@
 }
 
 @media (max-width: 1160px) {
-  .filter__checkbox-container {
+  .filter {
     margin-top: 40px;
   }
 }
 
 @media (max-width: 740px) {
-  .filter__checkbox-container {
+  .filter {
     margin-top: 46px;
   }
 

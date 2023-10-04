@@ -13,7 +13,7 @@ function Portfolio() {
             target='_blank'
             rel='nofollow noreferrer'>
             <p className='portfolio__text'>Статичный сайт</p>
-            <button className='portfolio__icon' />
+            <div className='portfolio__icon' />
           </Link>
         </li>
         <li className='portfolio__item'>
@@ -23,7 +23,7 @@ function Portfolio() {
             target='_blank'
             rel='nofollow noreferrer'>
             <p className='portfolio__text'>Адаптивный сайт</p>
-            <button className='portfolio__icon' />
+            <div className='portfolio__icon' />
           </Link>
         </li>
         <li className='portfolio__item'>
@@ -33,7 +33,7 @@ function Portfolio() {
             target='_blank'
             rel='nofollow noreferrer'>
             <p className='portfolio__text portfolio__text_type_indent'>Одностраничное приложение</p>
-            <button className='portfolio__icon portfolio__icon_type_last' />
+            <div className='portfolio__icon portfolio__icon_type_last' />
           </Link>
         </li>
       </ul>

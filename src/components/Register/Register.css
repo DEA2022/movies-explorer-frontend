@@ -6,6 +6,8 @@
   flex-direction: column;
   align-items: flex-start;
   padding-top: 70px;
+  padding-bottom: 70px;
+  flex: 1 0 auto;
 }
 
 .register__label {
@@ -70,12 +72,14 @@
 @media (max-width: 900px) {
   .register {
     padding-top: 232px;
+    padding-bottom: 232px;
   }
 }
 
 @media (max-width: 600px) {
   .register {
     padding-top: 56px;
+    padding-bottom: 30px;
     align-items: center;
     max-width: 260px;
   }
