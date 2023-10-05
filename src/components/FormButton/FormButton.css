@@ -1,0 +1,52 @@
+.form-button {
+  max-width: 396px;
+  width: 100%;
+  min-height: 45px;
+  background-color: #4285F4;
+  color: #FFFFFF;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  margin-top: 69px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.21;
+}
+
+.form-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+
+.form-button_login {
+  margin-top: 157px;
+}
+
+.form-button_disabled {
+  max-width: 396px;
+  width: 100%;
+  min-height: 45px;
+  background-color: #F8F8F8;
+  color: #C2C2C2;;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  margin-top: 69px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.21;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .form-button {
+    margin-top: 157px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .form-button_login {
+    margin-top: 245px;
+  }
+}
