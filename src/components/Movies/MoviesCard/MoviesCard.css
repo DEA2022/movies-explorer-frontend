@@ -6,7 +6,8 @@
 
 .movies-card__img {
   width: 100%;
-  min-height: 201px;
+  max-height: 201px;
+  height: 100%;
   display: block;
   border-radius: 6px;
   object-fit: cover;
@@ -83,6 +84,7 @@
   border: 0;
   border-radius: 50%;
   padding: 0;
+  cursor: pointer;
 }
 
 .movies-card__button-saved_type_delete {
@@ -99,7 +101,7 @@
 
 @media (max-width: 900px) {
   .movies-card__img {
-    min-height: 190px;
+    max-height: 190px;
   }
 
   .movies-card__info {
@@ -134,7 +136,7 @@
   }
 
   .movies-card__img {
-    min-height: 168px;
+    max-height: 168px;
   }
 
   .movies-card__info {

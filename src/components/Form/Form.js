@@ -1,11 +1,11 @@
 import './Form.css';
 
 
-function Form({ children }) {
+function Form({ children, onSubmit }) {
   return (
-    <div className='form'>
+    <form className='form' onSubmit={onSubmit} noValidate>
       {children}
-    </div>
+    </form>
   )
 }
 

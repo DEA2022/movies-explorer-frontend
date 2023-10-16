@@ -27,6 +27,7 @@
   color: #FFFFFF;
   font-size: 13px;
   line-height: 1.23;
+  outline: none;
 }
 
 .login__field-error {
@@ -36,12 +37,25 @@
   padding-top: 4px;
   padding-bottom: 4px;
   display: block;
-  visibility: hidden; 
+  min-height: 12px;
 }
 
 .login__field-error:last-of-type {
   padding-top: 10px;
   padding-bottom: 0;
+}
+
+.login__field_error {
+  color: #EE3465;
+}
+
+.login__success {
+  color: #EE3465;
+  font-size: 11px;
+  line-height: 1.21;
+  padding-top: 123px;
+  text-align: center;
+  min-height: 16px;
 }
 
 .login__container {
@@ -86,5 +100,9 @@
     font-size: 12px;
     line-height: 1.25;
     padding-top: 14px;
+  }
+
+  .login__success {
+    padding-top: 211px;
   }
 }

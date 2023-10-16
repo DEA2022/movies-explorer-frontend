@@ -27,6 +27,7 @@
   color: #FFFFFF;
   font-size: 13px;
   line-height: 1.23;
+  outline: none;
 }
 
 .register__field-error {
@@ -36,13 +37,21 @@
   padding-top: 4px;
   padding-bottom: 4px;
   display: block;
-  visibility: hidden;
+  min-height: 12px;
 }
 
 .register__field-error:last-of-type {
   padding-top: 10px;
   padding-bottom: 0;
-  visibility: hidden;
+}
+
+.register__success {
+  color: #EE3465;
+  font-size: 11px;
+  line-height: 1.21;
+  padding-top: 36px;
+  text-align: center;
+  min-height: 16px;
 }
 
 .register__container {
@@ -82,6 +91,10 @@
     padding-bottom: 30px;
     align-items: center;
     max-width: 260px;
+  }
+
+  .register__success {
+    padding-top: 123px;
   }
 
   .register__container {

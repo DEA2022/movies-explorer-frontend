@@ -1,9 +1,9 @@
 import './FormButton.css';
 
 
-function FormButton({ textButton, additionalClass }) {
+function FormButton({ textButton, isValid }) {
   return (
-    <button className={`form-button ${additionalClass}`} type="submit" aria-label={textButton}>{textButton}</button>
+    <button className={`form-button ${isValid ? '' : 'form-button_disabled'}`} type="submit" disabled={!isValid} aria-label={textButton}>{textButton}</button>
   )
 }
 
