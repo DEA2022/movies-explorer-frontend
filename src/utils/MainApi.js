@@ -103,7 +103,7 @@ class Api {
 }
 
 export const mainApi = new Api({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.movies.danilova.nomoredomainsicu.ru',
   headers: {
     "Content-Type": "application/json",
   }
