@@ -4,11 +4,13 @@ import getCardsInfoBySize from "../utils/getCardInfoBySize"
 import setStateMovesByName from '../utils/setStateMovesByName';
 import { mainApi } from '../utils/MainApi';
 import getToken from '../utils/getToken';
+import saveStateToLocalStorage from "../utils/setStateMovesByName";
 
 
 function useSearchMovies(initState) {
   const [searchWord, setSearchWord] = useState(initState.searchWord || "")
   const [isShortMovie, setIsShortMove] = useState(initState.isShortMovie || false)
+  const [allMovies, setAllMovies] = useState(initState.allMovies || [])
   const [movies, setMovies] = useState(initState.movies || [])
   const [cardMovies, setCardMovies] = useState(initState.cardMovies || [])
   const [availableShowMore, setAvailableShowMore] = useState(initState.availableShowMore || false)
@@ -42,36 +44,47 @@ function useSearchMovies(initState) {
       setErrors({ ...errors, searchWord: "Нужно ввести ключевое слово" })
       return
     }
-    setIsLoading(true)
-    apiMovies.getAllMovies()
-      .then((sourceMovies) => {
-        if (searchWord.trim()) {
-          const filteredMovies = sourceMovies.filter((film) => {
-            if (film.nameRU.toLowerCase().includes(word) || film.nameEN.toLowerCase().includes(word)) {
-              return isShortMovie ? film.duration <= 40 : true
-            } else {
-              return false
-            }
-          })
+    debugger
+    if (allMovies.length > 0) {
+      applyFilter(allMovies)
+      saveStateToLocalStorage("allMovies", allMovies)
+    } else {
+      setIsLoading(true)
+      apiMovies.getAllMovies()
+        .then((sourceMovies) => {
+          setAllMovies(sourceMovies)
+          applyFilter(sourceMovies)
+        })
+        .catch((message) => setErrors({ ...errors, serverMessage: message }))
+        .finally(() => setIsLoading(false))
+    }
+  }
 
-          const updatedErrors = { ...errors, movies: !filteredMovies.length ? "Ничего не найдено" : "" }
-          setErrors(updatedErrors)
-          setStateMovesByName("errors", updatedErrors)
-          if (filteredMovies.length > 0) {
-            const updatedMovies = filteredMovies.slice(0, getCardsInfoBySize(window.innerWidth).initCards)
-            setAvailableShowMore(filteredMovies > updatedMovies)
-            setStateMovesByName("availableShowMore", filteredMovies > updatedMovies)
-            setMovies(filteredMovies)
-            setStateMovesByName("movies", filteredMovies)
-
-            process(savedMovies, updatedMovies)
-          }
-
-          setIsLoading(false)
+  function applyFilter(sourceMovies) {
+    if (searchWord.trim()) {
+      const filteredMovies = sourceMovies.filter((film) => {
+        if (film.nameRU.toLowerCase().includes(word) || film.nameEN.toLowerCase().includes(word)) {
+          return isShortMovie ? film.duration <= 40 : true
+        } else {
+          return false
         }
       })
-      .catch((message) => setErrors({ ...errors, serverMessage: message }))
-      .finally(() => setIsLoading(false))
+
+      const updatedErrors = { ...errors, movies: !filteredMovies.length ? "Ничего не найдено" : "" }
+      setErrors(updatedErrors)
+      setStateMovesByName("errors", updatedErrors)
+      if (filteredMovies.length > 0) {
+        const updatedMovies = filteredMovies.slice(0, getCardsInfoBySize(window.innerWidth).initCards)
+        setAvailableShowMore(filteredMovies > updatedMovies)
+        setStateMovesByName("availableShowMore", filteredMovies > updatedMovies)
+        setMovies(filteredMovies)
+        setStateMovesByName("movies", filteredMovies)
+
+        process(savedMovies, updatedMovies)
+      }
+
+      setIsLoading(false)
+    }
   }
 
   function handleShowMore() {

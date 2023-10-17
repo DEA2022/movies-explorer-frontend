@@ -8,6 +8,7 @@ import useForm from "../../hooks/useForm";
 
 function Profile({ heading, additionalClass, loggedOut, onUpdate }) {
   const [isVisibleSubmitButton, setIsVisibleSubmitButton] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
   const [message, setMessage] = React.useState("");
   const currentUser = React.useContext(CurrentUserContext);
   const { values, errors, handleChange, resetValidation, isValid } = useForm({ name: currentUser.name, email: currentUser.email });
@@ -31,12 +32,14 @@ function Profile({ heading, additionalClass, loggedOut, onUpdate }) {
     evt.preventDefault();
     if (isValid) {
       handleDisabledButton();
+      setIsLoading(true)
       onUpdate({
         name: values.name,
         email: values.email,
       })
         .then(() => { setMessage("Успешно!"); setTimeout(setMessage, 1000, "") })
         .catch((msg) => setMessage(msg))
+        .finally(() => setIsLoading(false))
     }
   }
 
@@ -60,7 +63,7 @@ function Profile({ heading, additionalClass, loggedOut, onUpdate }) {
               minLength='2'
               maxLength='30'
               required
-              disabled={!isVisibleSubmitButton}
+              disabled={!isVisibleSubmitButton || isLoading}
               value={values.name || ''}
               onChange={handleChangeValue}
             />
@@ -77,7 +80,7 @@ function Profile({ heading, additionalClass, loggedOut, onUpdate }) {
               type="email"
               placeholder="Почта"
               required
-              disabled={!isVisibleSubmitButton}
+              disabled={!isVisibleSubmitButton || isLoading}
               value={values.email || ''}
               onChange={handleChangeValue}
             />
@@ -89,7 +92,7 @@ function Profile({ heading, additionalClass, loggedOut, onUpdate }) {
           {message}
         </span>
         {isVisibleSubmitButton ? (
-          <button className={`${isValid ? 'profile__button-saved' : 'profile__button-saved profile__button-saved_disabled'}`} type="submit">
+          <button className={`${isValid ? 'profile__button-saved' : 'profile__button-saved profile__button-saved_disabled'}`} disabled={isLoading} type="submit">
             Сохранить
           </button>
         ) : (
@@ -97,7 +100,7 @@ function Profile({ heading, additionalClass, loggedOut, onUpdate }) {
             <button type="submit" className="profile__button-edit" onClick={handleEnabledButton}>
               Редактировать
             </button>
-            <Link to="/signin" className="profile__exit" onClick={loggedOut}>
+            <Link to="/" className="profile__exit" onClick={loggedOut}>
               Выйти из аккаунта
             </Link>
           </div>

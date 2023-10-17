@@ -6,17 +6,24 @@ import FormHeading from '../FormHeading/FormHeading';
 import Logo from '../Logo/Logo';
 import './Register.css';
 import useForm from "../../hooks/useForm";
+import useCheckToken from '../../hooks/useCheckToken';
+import { paths } from '../../utils/constants';
 
 
 function Register({ heading, textButton, onRegister }) {
   const { values, handleChange, isValid, errors } = useForm({ name: '', email: '', password: '' });
   const [message, setMessage] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  useCheckToken(paths.movies.pathname)
 
   function handleSubmit(evt) {
     evt.preventDefault();
     evt.stopPropagation();
+    setIsLoading(true)
     onRegister(values.name, values.email, values.password)
       .catch((msg) => setMessage(msg))
+      .finally(() => setIsLoading(false))
   }
 
   function handleChangeValue(e) {
@@ -53,6 +60,7 @@ function Register({ heading, textButton, onRegister }) {
           id='email'
           placeholder="email"
           required
+          disabled={isLoading}
           value={values.email || ''}
           onChange={handleChangeValue}
         />
@@ -65,13 +73,14 @@ function Register({ heading, textButton, onRegister }) {
           id='password'
           placeholder="пароль"
           required
+          disabled={isLoading}
           minLength="2"
           value={values.password || ''}
           onChange={handleChangeValue}
         />
         <span className="register__field-error">{errors.password}</span>
         <span className="register__success">{message}</span>
-        <FormButton textButton={textButton} isValid={isValid} />
+        <FormButton textButton={textButton} isValid={isValid} disabled={isLoading} />
         <div className="register__container">
           <p className="register__link-text">Уже зарегистрированы?</p>
           <Link className="register__link" to="/signin">Войти</Link>

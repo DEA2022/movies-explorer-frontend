@@ -129,6 +129,10 @@
     display: none;
   }
 
+  .navigation__container_logout {
+    display: flex;
+  }
+
   .navigation__account-link {
     display: none;
   }

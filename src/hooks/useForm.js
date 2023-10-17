@@ -16,6 +16,11 @@ function useForm(initValues) {
       isValid = false;
     }
 
+    if (name === "email" && (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value))) {
+      error = "e-mail введен некорректно"
+      isValid = false;
+    }
+
     // Если значения не изменились, то такую форма не проходит валидацию.
     // Проверка должна быть самой последней.
     if (Object.entries(initValues).every(([name, value]) => updatedValues[name] === value)) {

@@ -6,7 +6,8 @@ function FilterCheckbox({ checked, onClick, disabled }) {
     <div className="filter">
       <label className="filter__checkbox-label">
         <input
-          checked={checked}
+          value={checked}
+          defaultChecked={checked}
           onChange={(e) => onClick(e.target.checked)}
           className="filter__checkbox"
           type="checkbox"

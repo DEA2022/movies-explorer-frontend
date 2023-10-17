@@ -19,7 +19,7 @@ import getToken from '../../utils/getToken';
 import errors from '../../utils/errors';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(!!getToken());
   const [currentUser, setCurrentUser] = React.useState({});
   const navigate = useNavigate();
 
@@ -65,10 +65,10 @@ function App() {
           if (userInfo) {
             setIsLoggedIn(true);
             setCurrentUser(userInfo);
-            navigate("/movies");
           }
         })
         .catch((errorMessage) => {
+          setIsLoggedIn(false);
           console.error(`Верификация токена не выполнена ${errorMessage}`)
         })
     }
