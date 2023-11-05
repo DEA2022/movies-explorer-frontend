@@ -1,9 +1,9 @@
 import './FormHeading.css';
 
 
-function FormHeading({ heading, additionalClass }) {
+function FormHeading({ name, additionalClass, heading }) {
   return (
-    <h2 className={`form-heading ${additionalClass}`}>{heading}</h2>
+    <h2 className={`form-heading ${additionalClass}`}>{heading} {name}</h2>
   )
 }
 

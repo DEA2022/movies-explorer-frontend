@@ -24,6 +24,7 @@
   line-height: 1.29;
   color: #FFFFFF;
   box-sizing: border-box;
+  outline: none;
 }
 
 .search__form-container {
@@ -44,11 +45,19 @@
   flex-shrink: 0;
   border: 0;
   padding: 0;
+  cursor: pointer;
 }
 
 .search__form-submit:hover {
   opacity: 0.8;
-  cursor: pointer;
+}
+
+.search__form-error {
+  color: #FF004C;
+  font-size: 13px;
+  line-height: 1.21;
+  padding-top: 5px;
+  min-height: 16px;
 }
 
 @media (max-width: 1160px) {
