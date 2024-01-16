@@ -4,13 +4,12 @@
 
 https://www.figma.com/file/OFLUSj5p9CfhLa8BRmaylT/light-1?type=design&node-id=1-7266&mode=dev
 
-Ссылка на репозиторий: https://github.com/DEA2022/movies-explorer-frontend
-Ссылка на пулреквест: https://github.com/DEA2022/movies-explorer-frontend/pull/2
-Ссылка на деплой проекта: https://movies.danilova.nomoredomainsicu.ru/
+Ссылка на репозиторий: https://github.com/DEA2022/movies-explorer-frontend<br>
+Ссылка на пулреквест: https://github.com/DEA2022/movies-explorer-frontend/pull/2<br>
+Ссылка на деплой проекта: https://movies.danilova.nomoredomainsicu.ru/<br>
 
 ## Описание проекта
-Дипломный проект "Movies Explorer" - приложение для поиска и просмотра фильмов международного фестиваля документального кино о новой культуре "Beat Film Festival".
-
+Дипломный проект "Movies Explorer" - приложение для поиска и просмотра фильмов международного фестиваля документального кино о новой культуре "Beat Film Festival".<br>
 Выполнен в рамках обучения в Яндекс.Практикум.
 
 ### Используемые технологии
